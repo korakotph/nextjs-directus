@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'SILPAKORN70yr';
+    src: url('/suweb/fonts/SILPAKORN70yr-Italic.woff2') format('woff2'),
+        url('/suweb/fonts/SILPAKORN70yr-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SILPAKORN70NEW Shadow';
+    src: url('/suweb/fonts/SILPAKORN70NEWShadow-Italic.woff2') format('woff2'),
+        url('/suweb/fonts/SILPAKORN70NEWShadow-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SILPAKORN70yr';
+    src: url('/suweb/fonts/SILPAKORN70yr.woff2') format('woff2'),
+        url('/suweb/fonts/SILPAKORN70yr.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SILPAKORN70NEW';
+    src: url('/suweb/fonts/SILPAKORN70NEW.woff2') format('woff2'),
+        url('/suweb/fonts/SILPAKORN70NEW.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SILPAKORN70NEW Shadow';
+    src: url('/suweb/fonts/SILPAKORN70NEWShadow.woff2') format('woff2'),
+        url('/suweb/fonts/SILPAKORN70NEWShadow.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SILPAKORN70NEW';
+    src: url('/suweb/fonts/SILPAKORN70NEW-Italic.woff2') format('woff2'),
+        url('/suweb/fonts/SILPAKORN70NEW-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Bold.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Black.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-BlackItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-ExtraLightItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Italic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Light.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-ExtraBold.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-BoldItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-ExtraLight.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-ExtraBoldItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-SemiBoldItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-LightItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-MediumItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Regular.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-ThinItalic.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-SemiBold.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Medium.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prompt';
+    src: url('/suweb/fonts/Prompt-Thin.woff2') format('woff2'),
+        url('/suweb/fonts/Prompt-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

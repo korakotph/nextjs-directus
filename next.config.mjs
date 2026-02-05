@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  // basePath: '/',
+  // assetPrefix: '/',
+  // trailingSlash: true, // optional แล้วแต่ใช้ static hosting หรือไม่
 };
 
 export default nextConfig;
