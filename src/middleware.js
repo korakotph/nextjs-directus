@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const DEFAULT_LANG = "th";
-const SUPPORTED_LANGS = ["th", "en"];
+const ALLOWED_LANGS = ['th', 'en']
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;
@@ -16,18 +16,25 @@ export function middleware(request) {
   const segments = pathname.split("/").filter(Boolean);
   const lang = segments[0];
 
+  // ข้าม static files
+  if (
+    pathname.startsWith('/img') ||
+    pathname.startsWith('/_next') ||
+    pathname.includes('.')
+  ) {
+    return NextResponse.next()
+  }
+
   // /th
-  if (segments.length === 1 && SUPPORTED_LANGS.includes(lang)) {
-    return NextResponse.redirect(
-      new URL(`/${lang}/home`, request.url)
-    );
+  if (lang && !ALLOWED_LANGS.includes(lang)) {
+    return NextResponse.redirect(new URL('/th/home', request.url))
   }
 
   // /abc หรือ lang ไม่รองรับ
-  if (!SUPPORTED_LANGS.includes(lang)) {
+  if (pathname === '/th' || pathname === '/en') {
     return NextResponse.redirect(
-      new URL(`/${DEFAULT_LANG}/home`, request.url)
-    );
+      new URL(`/${lang}/home`, request.url)
+    )
   }
 
   return NextResponse.next();

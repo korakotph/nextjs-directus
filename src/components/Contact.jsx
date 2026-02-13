@@ -41,7 +41,7 @@ export default function Contact() {
           general: [],
           downloads: []
         };
-      //   console.log(data.data);
+
         data.data.forEach(item => {
           switch (item.category) {
             case "1": grouped.campuses.push(item); break;

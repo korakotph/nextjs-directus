@@ -1,6 +1,6 @@
 'use client' // สำคัญมาก
 import { useEffect } from 'react'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/Navbar/Navbar.client'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Qoute from '@/components/Qoute'
