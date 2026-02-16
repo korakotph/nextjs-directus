@@ -1,8 +1,5 @@
 export default function HeaderBlock({ item }) {
-  // const item = block.block_items?.[0]
   if (!item) return null
-
-  // console.log('HeaderBlock item:', item)
 
   const tagClassMap = {
     h1: 'text-4xl',

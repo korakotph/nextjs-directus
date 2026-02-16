@@ -3,7 +3,14 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { prerenderHtml } from '@/lib/prerenderHtml'
-const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL;
+import { notFound } from 'next/navigation';
+
+const isServer = typeof window === "undefined"
+
+const BASE_URL = isServer
+  ? process.env.DIRECTUS_INTERNAL_URL
+  : process.env.NEXT_PUBLIC_DIRECTUS_URL;
+
 
 export default function NewsBlock({ item, lang }) {
 
@@ -26,8 +33,8 @@ export default function NewsBlock({ item, lang }) {
       img_news_rounded = ''; // reset to default if invalid
   }
 
-  const url_news = DIRECTUS_URL
-  ? `${DIRECTUS_URL}/items/news?filter[status][_eq]=published&limit=${limit}`
+  const url_news = BASE_URL
+  ? `${BASE_URL}/items/news?filter[status][_eq]=published&limit=${limit}`
   : null
 
   useEffect(() => {
@@ -83,7 +90,7 @@ export default function NewsBlock({ item, lang }) {
             >
               <div key={n.id} className={`${item?.rounded_news || ''} shadow`}>
                 <img
-                  src={`${DIRECTUS_URL}/assets/${n.image}`}
+                  src={`${BASE_URL}/assets/${n.image}`}
                   alt={n.title}
                   className={`w-full h-48 object-cover mb-2 ${img_news_rounded || ''}`}
                 />

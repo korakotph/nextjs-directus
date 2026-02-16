@@ -22,7 +22,6 @@ const inter = Inter({
 export default async function LangLayout({ children, params }) {
   const { lang } = await params;
   const settings = await getSiteSettings();
-  // console.log('Site settings in layout:', settings);
 
   return (
     <div

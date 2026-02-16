@@ -8,7 +8,11 @@ import { getSiteSettings } from '@/lib/site-settings'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL
+const isServer = typeof window === "undefined"
+
+const BASE_URL = isServer
+  ? process.env.DIRECTUS_INTERNAL_URL
+  : process.env.NEXT_PUBLIC_DIRECTUS_URL
 
 export default function HeroBlock() {
   const [banners, setBanners] = useState([])
@@ -22,8 +26,8 @@ export default function HeroBlock() {
     getSiteSettings().then(setSettings)
   }, [])
 
-  const url = DIRECTUS_URL
-    ? `${DIRECTUS_URL}/items/banner?filter[status][_eq]=published`
+  const url = BASE_URL
+    ? `${BASE_URL}/items/banner?filter[status][_eq]=published`
     : null
 
   /* =========================
@@ -75,7 +79,7 @@ export default function HeroBlock() {
             <div
               className="h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
               style={{
-                backgroundImage: `url(${DIRECTUS_URL}/assets/${banner.image})`
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_DIRECTUS_URL}/assets/${banner.image})`
               }}
             >
               {banner.title && (

@@ -2,11 +2,15 @@
 import NavbarClient from "./Navbar.client";
 import { getPages } from "@/lib/directus";
 
-const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL;
+const isServer = typeof window === "undefined"
+
+const BASE_URL = isServer
+  ? process.env.DIRECTUS_INTERNAL_URL
+  : process.env.NEXT_PUBLIC_DIRECTUS_URL
 
 async function getLanguages() {
   const res = await fetch(
-    `${DIRECTUS_URL}/items/languages`,
+    `${BASE_URL}/items/languages`,
     { cache: "no-cache" }
   );
 

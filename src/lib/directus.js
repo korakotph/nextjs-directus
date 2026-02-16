@@ -1,6 +1,11 @@
 import { Children } from "react";
+import { notFound } from "next/navigation";
 
-const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL;
+const isServer = typeof window === "undefined"
+
+const BASE_URL = isServer
+  ? process.env.DIRECTUS_INTERNAL_URL
+  : process.env.NEXT_PUBLIC_DIRECTUS_URL
 
 /**
  * ดึง page ตาม slug + language
@@ -63,7 +68,7 @@ export async function getPageBySlug(slug, lang = 'th') {
   params.append('fields[]', 'page_blocks.block_items.type.code')
   params.append('fields[]', 'page_blocks.block_items.type.type')
 
-  const url = `${DIRECTUS_URL}/items/pages?${params.toString()}`
+  const url = `${BASE_URL}/items/pages?${params.toString()}`
   const res = await fetch(url, { cache: 'no-store' })
 
   if (!res.ok) return null
@@ -133,7 +138,7 @@ export async function getPages(lang = 'th') {
   params.append('deep[children][sort]', 'menu_order')
 
   const res = await fetch(
-    `${DIRECTUS_URL}/items/pages?${params.toString()}`,
+    `${BASE_URL}/items/pages?${params.toString()}`,
     { cache: 'no-store' }
   )
 
@@ -182,10 +187,16 @@ export async function getPages(lang = 'th') {
 async function getNewsParentId(newsid) {
   const params = new URLSearchParams()
   // params.append('filter[slug][_eq]', 'news')
-  params.append('filter[newsid][_eq]', newsid)
+  const id = Number(newsid)
+
+  if (!Number.isInteger(id)) {
+    return notFound() // Next.js
+  }
+
+  params.append('filter[newsid][_eq]', id)
 
   const res = await fetch(
-    `${DIRECTUS_URL}/items/news?${params.toString()}`,
+    `${BASE_URL}/items/news?${params.toString()}`,
     { cache: 'no-store' }
   )
 
@@ -203,7 +214,7 @@ export async function getNewsDetailBySlug(slug, lang = 'th') {
   // 🔥 ลูกของ news เท่านั้น
   params.append('filter[news_id][_eq]', parent?.id)
 
-  const url = `${DIRECTUS_URL}/items/news_detail?${params.toString()}`
+  const url = `${BASE_URL}/items/news_detail?${params.toString()}`
   const res = await fetch(url, { cache: 'no-store' })
 
   if (!res.ok) return null
